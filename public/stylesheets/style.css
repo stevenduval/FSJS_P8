@@ -1,6 +1,7 @@
 body {
   padding: 10px 50px 50px;
   font: 18px "Garamond", serif;
+  width: fit-content;
 }
 
 a {
@@ -39,6 +40,7 @@ input[type=submit] {
 
 p {
   margin: 20px auto;
+  line-height: 35px;
 }
 
 ul {
@@ -94,4 +96,58 @@ input[type=text] {
 
 .error {
   color: rgb(236, 15, 15);
+}
+
+#searchForm {
+  display: grid;
+  grid-auto-flow: column dense;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#searchForm p {
+  line-height: unset;
+  margin: unset;
+  display: block;
+}
+
+#searchForm p+p {
+  justify-self: end;
+}
+
+#searchForm input[type=text] {
+  margin: unset;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#searchForm a.button, #searchForm input[type=submit] {
+  margin: unset;
+  transition: unset;
+}
+
+#searchForm a.button {
+  display: block;
+  font-weight: 400;
+}
+
+.paginationContainer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationButton {
+  color: white;
+  background: #019875;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 10px 14px 12px;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 0 15px;
+}
+
+.paginationButton.active {
+  color: orange;
 }

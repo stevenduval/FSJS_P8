@@ -1,0 +1,8 @@
+form#searchForm(action="/books/search", method="get")
+    p
+        input#search(name='q' type='text' placeholder='search' value=query)
+    p
+        input(type='submit' value='Search')
+    if (path.path === '/search')
+        p
+            a.button(href='/books') Clear Search

@@ -1,0 +1,12 @@
+- var p = 1;
+
+div.paginationContainer 
+    //- loop to create pagination buttons
+    while p < pageCount + 1
+        //- set active class when the page we are on is the pagination button we are creating
+        - var classes = (currPage == p) ? 'paginationButton active' : 'paginationButton';
+        //- if first button, then just set to /books or /books/search?q=term 
+            otherwise, set to /books?page=num or /books/search?q=term&page=num
+        - var hrefs = (p === 1) ? (query) ? path.baseUrl + path?.path + `?q=${query}` : path.baseUrl : (query) ? path.baseUrl + path?.path + `?q=${query}&page=${p}` : path.baseUrl + `?page=${p}`;
+        //- set anchor element
+        a(class=classes, href=hrefs)=p++
